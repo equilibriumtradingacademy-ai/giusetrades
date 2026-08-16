@@ -132,6 +132,32 @@ section{padding:96px 0}
 .stiers .save{display:block;font-size:.68rem;color:var(--green);font-weight:700;margin-top:2px}
 
 /* EXCHANGES */
+/* BLOG */
+.blog{background:var(--navy2);border-top:1px solid rgba(41,169,232,.12)}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-top:48px}
+.bcard{background:var(--navy3);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:26px;transition:all .2s;cursor:pointer;display:flex;flex-direction:column}
+.bcard:hover{border-color:rgba(41,169,232,.4);transform:translateY(-3px)}
+.bdate{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);margin-bottom:10px}
+.btitle{font-family:'Barlow Condensed',sans-serif;font-size:1.3rem;font-weight:800;line-height:1.15;margin-bottom:12px;color:var(--white)}
+.bexcerpt{font-size:.86rem;color:var(--gray);line-height:1.6;margin-bottom:16px;flex:1}
+.bread{font-size:.78rem;font-weight:700;color:var(--cyan);letter-spacing:.04em}
+.bmodal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:500;padding:40px 20px;overflow-y:auto}
+.bmodal-overlay.open{display:block}
+.bmodal{max-width:720px;margin:0 auto;background:var(--navy2);border:1px solid rgba(41,169,232,.3);border-radius:14px;padding:44px}
+.bmodal-close{float:right;background:none;border:1px solid rgba(255,255,255,.2);color:var(--white);width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:1.1rem;line-height:1}
+.bmodal h2{font-family:'Barlow Condensed',sans-serif;font-size:1.9rem;font-weight:900;margin-bottom:6px;clear:both;padding-top:10px}
+.bmodal .bdate{margin-bottom:20px}
+.bmodal-body{color:var(--light);font-size:.94rem;line-height:1.85;white-space:pre-line}
+.bmodal-body b{color:var(--cyan)}
+
+/* LANG TOGGLE */
+.lang-toggle{display:flex;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:6px;overflow:hidden;margin-left:6px}
+.lang-btn{background:none;border:none;color:var(--gray);font-size:.72rem;font-weight:700;letter-spacing:.05em;padding:7px 12px;cursor:pointer;transition:all .2s}
+.lang-btn.active{background:var(--cyan);color:var(--navy)}
+html[lang="en"] .es-only{display:none}
+html[lang="es"] .en-only{display:none}
+
+/* EXCHANGES */
 .exc{background:var(--navy2);border-top:1px solid rgba(41,169,232,.12)}
 .req-box{background:var(--navy2);border:1px solid rgba(41,169,232,.25);border-radius:10px;padding:26px 30px;margin-top:34px;max-width:760px}
 .req-title{font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan);margin-bottom:16px}
@@ -208,30 +234,41 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding
     <div class="nav-brand-txt">EQUILIBRIUM<span>TRADING ACADEMY</span></div>
   </a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="#track">Track Record</a></li>
-    <li><a href="#curso">Curso</a></li>
-    <li><a href="#vip">Comunidad VIP</a></li>
-    <li><a href="#servicios">Asesoría</a></li>
-    <li><a href="#libro">Libro</a></li>
-    <li><a href="#contacto" class="nav-cta">Aplica ahora</a></li>
+    <li><a href="#track" class="es-only">Track Record</a><a href="#track" class="en-only">Track Record</a></li>
+    <li><a href="#curso" class="es-only">Curso</a><a href="#curso" class="en-only">Course</a></li>
+    <li><a href="#vip" class="es-only">Comunidad VIP</a><a href="#vip" class="en-only">VIP Community</a></li>
+    <li><a href="#servicios" class="es-only">Asesoría</a><a href="#servicios" class="en-only">Coaching</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#libro" class="es-only">Libro</a><a href="#libro" class="en-only">Book</a></li>
+    <li><a href="#contacto" class="nav-cta es-only">Aplica ahora</a><a href="#contacto" class="nav-cta en-only">Apply now</a></li>
+    <li>
+      <div class="lang-toggle">
+        <button class="lang-btn" id="btnES" onclick="setLang('es')">ES</button>
+        <button class="lang-btn" id="btnEN" onclick="setLang('en')">EN</button>
+      </div>
+    </li>
   </ul>
   <button class="burger" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
 </nav>
 
 <section class="hero">
   <img src="img/logo.png" alt="Equilibrium Trading Academy" class="hero-logo">
-  <div class="hero-eyebrow"><i></i>Criptomonedas &amp; Commodities · Desde 2016</div>
-  <h1>El mercado premia<em>a los preparados</em></h1>
-  <p class="hero-sub">Educación real en criptomonedas y commodities. Aprende a leer los ciclos, gestionar el riesgo y operar con un sistema que ha funcionado durante más de una década.</p>
+  <div class="hero-eyebrow"><i></i><span class="es-only">Criptomonedas &amp; Commodities · Desde 2016</span><span class="en-only">Crypto &amp; Commodities · Since 2016</span></div>
+  <h1 class="es-only">El mercado premia<em>a los preparados</em></h1>
+  <h1 class="en-only">The market rewards<em>the prepared</em></h1>
+  <p class="hero-sub es-only">Educación real en criptomonedas y commodities. Aprende a leer los ciclos, gestionar el riesgo y operar con un sistema que ha funcionado durante más de una década.</p>
+  <p class="hero-sub en-only">Real education in crypto and commodities. Learn to read cycles, manage risk, and trade with a system that has worked for over a decade.</p>
   <div class="hero-btns">
-    <a href="#curso" class="btn-primary">Ver el curso gratis</a>
-    <a href="#vip" class="btn-secondary">Comunidad VIP</a>
+    <a href="#curso" class="btn-primary es-only">Ver el curso gratis</a>
+    <a href="#curso" class="btn-primary en-only">See the free course</a>
+    <a href="#vip" class="btn-secondary es-only">Comunidad VIP</a>
+    <a href="#vip" class="btn-secondary en-only">VIP Community</a>
   </div>
   <div class="stats">
-    <div class="stat"><div class="stat-num">+90%</div><div class="stat-label">Efectividad en calls públicos</div></div>
-    <div class="stat"><div class="stat-num y">13+</div><div class="stat-label">Años en los mercados</div></div>
-    <div class="stat"><div class="stat-num g">5K+</div><div class="stat-label">Traders en la comunidad</div></div>
-    <div class="stat"><div class="stat-num">$0</div><div class="stat-label">Costo del curso base</div></div>
+    <div class="stat"><div class="stat-num">+90%</div><div class="stat-label es-only">Efectividad en calls públicos</div><div class="stat-label en-only">Effectiveness on public calls</div></div>
+    <div class="stat"><div class="stat-num y">13+</div><div class="stat-label es-only">Años en los mercados</div><div class="stat-label en-only">Years in the markets</div></div>
+    <div class="stat"><div class="stat-num g">5K+</div><div class="stat-label es-only">Traders en la comunidad</div><div class="stat-label en-only">Traders in the community</div></div>
+    <div class="stat"><div class="stat-num">$0</div><div class="stat-label es-only">Costo del curso base</div><div class="stat-label en-only">Cost of the base course</div></div>
   </div>
 </section>
 
@@ -254,20 +291,24 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding
       <div class="tc">
         <img src="img/btc-bottom.png" alt="Bitcoin bottom noviembre 2022" class="tc-img">
         <div class="tc-body">
-          <div class="tc-top"><div class="tc-asset">Bitcoin · Bottom</div><div class="tc-pct">+128%</div></div>
+          <div class="tc-top"><div class="tc-asset">Bitcoin · Bottom</div><div class="tc-pct">+553%</div></div>
           <div class="tc-date">23 Nov 2022</div>
-          <p class="tc-desc">"Bottom is in" publicado el 23 de noviembre de 2022, cuando Bloomberg titulaba "In Ruins" y The Economist "Crypto's Downfall". El sentimiento estaba en su punto más bajo. El mercado giró desde ahí.</p>
+          <p class="tc-desc es-only">"Bottom is in" publicado el 23 de noviembre de 2022, cuando Bloomberg titulaba "In Ruins" y The Economist "Crypto's Downfall". El sentimiento estaba en su punto más bajo. Compra cerca de $15,300 y primera toma de ganancias en $99,950.</p>
+          <p class="tc-desc en-only">"Bottom is in" published on November 23, 2022, when Bloomberg headlined "In Ruins" and The Economist "Crypto's Downfall". Sentiment was at its lowest point. Entry near $15,300 and first take profit at $99,950.</p>
         </div>
       </div>
 
       <div class="tc">
-        <img src="img/silver.png" alt="Plata 2020-2026" class="tc-img">
+        <img src="img/silver.png" alt="Plata 2020-2026 calls públicos" class="tc-img">
         <div class="tc-body">
           <div class="tc-top"><div class="tc-asset">Plata</div><div class="tc-pct">+400%</div></div>
-          <div class="tc-date">Jul 2020 → 2026</div>
-          <p class="tc-desc">"Silver/USD está rezagada contra Gold/USD, es solo cuestión de tiempo antes de que se vuelva parabólica" publicado en julio 2020. Desde 2018 vengo recomendando acumular Plata y Uranio.</p>
+          <div class="tc-date">Jul 2020 → Ene 2026</div>
+          <p class="tc-desc es-only">Compra y venta documentadas públicamente. En julio 2020 publiqué que la plata estaba rezagada contra el oro y era cuestión de tiempo antes de volverse parabólica. Desde 2018 venía recomendando acumular Plata y Uranio. En enero 2026, cerca de $95-100, publiqué un video advirtiendo que no era momento de comprar — ese fue el top exacto del ciclo.</p>
+          <p class="tc-desc en-only">Entry and exit both documented publicly. In July 2020 I posted that silver was lagging against gold and it was only a matter of time before it went parabolic. Since 2018 I had been recommending accumulating Silver and Uranium. In January 2026, near $95-100, I published a video warning it was not the time to buy — that was the exact cycle top.</p>
+          <a href="https://youtu.be/PJQXJnIjO8Y" target="_blank" rel="noopener" style="display:inline-block;margin-top:10px;font-size:.8rem;color:var(--cyan);font-weight:700"><span class="es-only">Ver el video del top →</span><span class="en-only">Watch the top call video →</span></a>
         </div>
       </div>
+
 
       <div class="tc">
         <img src="img/uranium.png" alt="Uranio URA 2019-2026" class="tc-img">
@@ -287,11 +328,15 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding
     <div class="curso-head">
       <div>
         <div class="sec-eyebrow">Equilibrium Trading Academy</div>
-        <div class="sec-title">El curso completo.<br><em>Gratis hasta gestión de riesgo</em></div>
+        <div class="sec-title es-only">El curso completo.<br><em>Gratis hasta gestión de riesgo</em></div>
+        <div class="sec-title en-only">The complete course.<br><em>Free through risk management</em></div>
       </div>
       <div>
-        <p class="sec-sub" style="margin-bottom:24px">8 módulos construidos con más de una década operando criptomonedas y commodities. Sin señales de terceros, sin indicadores mágicos. Solo el método que uso todos los días.</p>
-        <a href="https://www.youtube.com/playlist?list=PLVXjNByXMdZQ" target="_blank" rel="noopener" class="btn-primary">Ver curso en YouTube</a>
+        <p class="sec-sub es-only" style="margin-bottom:24px">8 módulos construidos con más de una década operando criptomonedas y commodities. Sin señales de terceros, sin indicadores mágicos. Solo el método que uso todos los días.</p>
+        <p class="sec-sub en-only" style="margin-bottom:24px">8 modules built from over a decade trading crypto and commodities. No third-party signals, no magic indicators. Just the method I use every day.</p>
+        <a href="https://www.youtube.com/playlist?list=PLVXjNByXMdZQ" target="_blank" rel="noopener" class="btn-primary es-only">Ver curso en YouTube</a>
+        <a href="https://www.youtube.com/playlist?list=PLVXjNByXMdZQ" target="_blank" rel="noopener" class="btn-primary en-only">Watch course on YouTube</a>
+        <div class="en-only" style="margin-top:18px;font-size:.85rem;color:var(--gray);line-height:1.6;border-left:2px solid var(--cyan);padding-left:14px">The English version of this course is currently being recorded. If you're interested in the meantime, you can book a 1:1 class or join a group session in English — just apply below.</div>
       </div>
     </div>
     <div class="modulos">
@@ -410,6 +455,400 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding
   </div>
 </section>
 
+<section class="blog" id="blog">
+  <div class="container">
+    <div class="sec-eyebrow es-only">Blog</div>
+    <div class="sec-eyebrow en-only">Blog</div>
+    <div class="sec-title es-only">Artículos y<br><em>análisis escrito</em></div>
+    <div class="sec-title en-only">Articles and<br><em>written analysis</em></div>
+    <p class="sec-sub es-only">Notas y guías escritas a lo largo de los años sobre gestión de riesgo, psicología del trading y ciclos de mercado.</p>
+    <p class="sec-sub en-only">Notes and guides written over the years on risk management, trading psychology and market cycles.</p>
+    <div class="blog-grid">
+
+      <div class="bcard" onclick="openBlog('b1')">
+        <div class="bdate">Mar 6, 2020</div>
+        <div class="btitle es-only">La Importancia de Conocer tu Relación Ganancia/Pérdida</div>
+        <div class="btitle en-only">Why Your Profit/Loss Ratio Matters</div>
+        <p class="bexcerpt es-only">Cómo calcular tu win rate mínimo según tu relación riesgo/beneficio, y por qué un sistema con 5:1 necesita solo 17% de efectividad para ser rentable.</p>
+        <p class="bexcerpt en-only">How to calculate your minimum win rate based on your risk/reward ratio, and why a 5:1 system only needs a 17% win rate to be profitable.</p>
+        <div class="bread es-only">Leer artículo →</div>
+        <div class="bread en-only">Read article →</div>
+      </div>
+
+      <div class="bcard" onclick="openBlog('b2')">
+        <div class="bdate">Nov 28, 2024</div>
+        <div class="btitle es-only">Glosario Completo de Términos de Trading</div>
+        <div class="btitle en-only">Complete Trading Terms Glossary</div>
+        <p class="bexcerpt es-only">Más de 50 términos esenciales de trading y criptomonedas explicados en español, de la A a la W.</p>
+        <p class="bexcerpt en-only">Over 50 essential trading and crypto terms explained in Spanish, A to W.</p>
+        <div class="bread es-only">Leer artículo →</div>
+        <div class="bread en-only">Read article →</div>
+      </div>
+
+      <div class="bcard" onclick="openBlog('b3')">
+        <div class="bdate">Nov 26, 2024</div>
+        <div class="btitle es-only">Del Auge al Colapso: Lecciones de la Burbuja Dotcom y la Caída de Roma</div>
+        <div class="btitle en-only">From Boom to Bust: Lessons from the Dotcom Bubble and the Fall of Rome</div>
+        <p class="bexcerpt es-only">Paralelos históricos entre la burbuja dotcom, la caída del imperio romano y los ciclos actuales del mercado cripto.</p>
+        <p class="bexcerpt en-only">Historical parallels between the dotcom bubble, the fall of the Roman empire and current crypto market cycles.</p>
+        <div class="bread es-only">Leer artículo →</div>
+        <div class="bread en-only">Read article →</div>
+      </div>
+
+      <div class="bcard" onclick="openBlog('b4')">
+        <div class="bdate">May 8, 2020</div>
+        <div class="btitle es-only">Cómo Preparar tu Propia Estación de Trading</div>
+        <div class="btitle en-only">How to Set Up Your Own Trading Station</div>
+        <p class="bexcerpt es-only">Los 5 pasos esenciales para armar tu setup de trading: escritorio, computadora, monitores y conexión.</p>
+        <p class="bexcerpt en-only">The 5 essential steps to build your trading setup: desk, computer, monitors and connection.</p>
+        <div class="bread es-only">Leer artículo →</div>
+        <div class="bread en-only">Read article →</div>
+      </div>
+
+      <div class="bcard" onclick="openBlog('b5')">
+        <div class="bdate">Apr 17, 2020</div>
+        <div class="btitle es-only">Importancia de Usar un Diario de Trading</div>
+        <div class="btitle en-only">The Importance of Keeping a Trading Journal</div>
+        <p class="bexcerpt es-only">Los 12 elementos que todo diario de trading debe incluir para identificar patrones y mejorar tu estrategia.</p>
+        <p class="bexcerpt en-only">The 12 elements every trading journal should include to spot patterns and improve your strategy.</p>
+        <div class="bread es-only">Leer artículo →</div>
+        <div class="bread en-only">Read article →</div>
+      </div>
+
+      <div class="bcard" onclick="openBlog('b6')">
+        <div class="bdate">Mar 27, 2020</div>
+        <div class="btitle es-only">Tips Para Gestionar Riesgo Cuando Usas Apalancamiento</div>
+        <div class="btitle en-only">Tips for Managing Risk When Using Leverage</div>
+        <p class="bexcerpt es-only">4 reglas clave para usar apalancamiento sin quemar tu cuenta: conocer las reglas, empezar poco a poco, cortar pérdidas rápido y controlar tus posiciones.</p>
+        <p class="bexcerpt en-only">4 key rules for using leverage without blowing your account: know the rules, start small, cut losses fast, and monitor your positions.</p>
+        <div class="bread es-only">Leer artículo →</div>
+        <div class="bread en-only">Read article →</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BLOG MODALS -->
+<div class="bmodal-overlay" id="bmodal-overlay" onclick="if(event.target===this)closeBlog()">
+  <div class="bmodal">
+    <button class="bmodal-close" onclick="closeBlog()">✕</button>
+    <div id="bmodal-content"></div>
+  </div>
+</div>
+
+<script>
+const blogPosts = {
+  b1: {
+    date: "6 marzo 2020",
+    title_es: "La Importancia de Conocer tu Relación Ganancia/Pérdida",
+    title_en: "Why Your Profit/Loss Ratio Matters",
+    body_es: `Una relación ganancia/pérdida es una medida de la capacidad de una estrategia de trading particular para generar ganancias en lugar de pérdidas.
+
+La relación de ganancias/pérdidas de una estrategia o sistema de trading se calcula tomando las ganancias promedio de todas las operaciones ganadoras dividido por las pérdidas promedio de todas las operaciones perdidas durante un período de tiempo específico.
+
+La relación ganancia/pérdida mide el rendimiento de una estrategia o sistema de trading. Obviamente, cuanto mayor sea la proporción, mejor es la estrategia.
+
+Por ejemplo, si un sistema tiene un promedio ganador de $1,250 por operación y una pérdida promedio durante el mismo período de tiempo de $250 por operación, entonces la relación de ganancia/pérdida sería de 5:1. Eso significa que si terminas con pérdidas en 4 operaciones, y tienes un trade ganador terminas con una ganancia de $250. Incluso con una estrategia que te permita tener una relación ganancia/pérdida de 5:1 necesitarías un rate de efectividad de más de 17% para ser rentable.
+
+En contraste, si un sistema tuviera un promedio de ganancias de $250 por operación y una pérdida promedio de $750 por operación, la relación de ganancias/pérdidas sería 1:3. Eso significa que si pierdes 4 operaciones, tienes que ganar 12 operaciones para ser rentable (necesitas un rate de efectividad de más de 75%).
+
+Para concluir, en este corto artículo puedes ver la importancia de tener un plan o sistema de trading, y también lo importante de cortar tus pérdidas tan pronto puedas y dejar tus ganadores correr. También es muy importante tener un Diario de Trading, en el cual vas a llevar un registro de todas las operaciones realizadas en un marco de tiempo específico, lo que te permitirá evaluar tu estrategia y analizar dónde son tus principales fallas.`,
+    body_en: `A profit/loss ratio measures a particular trading strategy's ability to generate gains rather than losses.
+
+The profit/loss ratio of a trading strategy or system is calculated by taking the average profit of all winning trades divided by the average loss of all losing trades over a specific period of time.
+
+The higher the ratio, the better the strategy. For example, if a system has an average win of $1,250 per trade and an average loss of $250 per trade, the ratio would be 5:1. That means even if you lose 4 trades in a row, one winning trade covers it with a $250 profit. Even with a 5:1 ratio you'd only need a 17% win rate to be profitable.
+
+In contrast, a system with an average win of $250 and an average loss of $750 has a 1:3 ratio. That means you'd need to win 12 trades to cover 4 losses — a 75%+ win rate just to break even.
+
+The takeaway: having a trading plan matters, and cutting losses early while letting winners run is critical. Keeping a Trading Journal is essential to track every trade and identify where your main weaknesses are.`
+  },
+  b2: {
+    date: "28 noviembre 2024",
+    title_es: "Glosario Completo de Términos de Trading",
+    title_en: "Complete Trading Terms Glossary",
+    body_es: `Active Trading / Trading Activo: Estrategia de compra y venta de activos frecuentemente para aprovechar movimientos a corto plazo.
+
+Altcoin: Cualquier criptomoneda distinta a Bitcoin.
+
+Arbitrage / Arbitraje: Estrategia que busca beneficios comprando un activo en un mercado y vendiéndolo en otro donde su precio es más alto.
+
+Ask / Precio de Venta: El precio más bajo al que un vendedor está dispuesto a vender un activo.
+
+ATH (All-Time High): El precio más alto alcanzado por un activo en toda su historia.
+
+ATL (All-Time Low): El precio más bajo alcanzado por un activo en toda su historia.
+
+Backtesting: Proceso de probar una estrategia usando datos históricos.
+
+Bear Market / Mercado Bajista: Período prolongado en el que los precios están en descenso.
+
+Bid / Precio de Compra: El precio más alto que un comprador está dispuesto a pagar.
+
+Breakout / Ruptura: Movimiento del precio que supera un nivel de soporte o resistencia significativo.
+
+Candlestick / Vela: Representación gráfica del precio en un marco de tiempo, mostrando apertura, cierre, máximo y mínimo.
+
+Cold Wallet / Cartera Fría: Almacenamiento offline de criptomonedas para mayor seguridad.
+
+Consolidation / Consolidación: Período en el que el precio se mueve lateralmente, sin dirección clara.
+
+Correction / Corrección: Disminución temporal del precio en un mercado alcista.
+
+Day Trading: Estrategia que implica abrir y cerrar operaciones dentro del mismo día.
+
+Divergence / Divergencia: Desacuerdo entre el movimiento del precio y un indicador técnico.
+
+Dollar-Cost Averaging (DCA): Comprar una cantidad fija de un activo en intervalos regulares.
+
+Drawdown / Retroceso: Reducción desde el pico hasta el fondo de una cuenta.
+
+FOMO (Fear of Missing Out): Emoción que lleva a decisiones impulsivas por miedo a perder oportunidades.
+
+Higher High (HH) / Máximo Más Alto: El precio alcanza un nuevo máximo más alto que el anterior. Indica tendencia alcista.
+
+Higher Low (HL) / Mínimo Más Alto: El nuevo mínimo es más alto que el anterior. Reafirma tendencia alcista.
+
+Hodl: Mantener un activo a largo plazo sin importar las fluctuaciones.
+
+Leverage / Apalancamiento: Uso de capital prestado para aumentar la exposición en el mercado.
+
+Liquidation Price / Precio de Liquidación: Nivel donde una posición apalancada se cierra automáticamente.
+
+Lower High (LH) / Máximo Más Bajo: Indica debilidad en la tendencia alcista.
+
+Lower Low (LL) / Mínimo Más Bajo: Indica tendencia bajista.
+
+Margin Call / Llamada de Margen: Solicitud de agregar fondos a una cuenta.
+
+Memecoins: Criptomonedas que nacen como memes pero ganan popularidad por especulación.
+
+Retracement / Retroceso: Movimiento temporal en contra de la tendencia principal.
+
+ROI (Return on Investment): Medida del rendimiento financiero de una inversión.
+
+Short Position / Posición Corta: Operación que busca ganar con una caída en el precio.
+
+Swing Trading: Estrategia que busca capturar movimientos intermedios en días o semanas.
+
+VWAP (Volume-Weighted Average Price): Precio promedio ponderado por volumen.`,
+    body_en: `Active Trading: Buying and selling assets frequently to capture short-term moves.
+
+Altcoin: Any cryptocurrency other than Bitcoin.
+
+Arbitrage: Buying an asset in one market and selling it in another where the price is higher.
+
+Ask: The lowest price a seller is willing to accept.
+
+ATH (All-Time High): The highest price an asset has ever reached.
+
+ATL (All-Time Low): The lowest price an asset has ever reached.
+
+Backtesting: Testing a strategy using historical data.
+
+Bear Market: A prolonged period of declining prices.
+
+Bid: The highest price a buyer is willing to pay.
+
+Breakout: A price move that clears a significant support or resistance level.
+
+Candlestick: A chart representation showing open, close, high and low for a timeframe.
+
+Cold Wallet: Offline crypto storage for extra security.
+
+Consolidation: A period where price moves sideways with no clear direction.
+
+Correction: A temporary price decline within an uptrend.
+
+Day Trading: Opening and closing trades within the same day.
+
+Divergence: A disagreement between price action and a technical indicator.
+
+Dollar-Cost Averaging (DCA): Buying a fixed amount of an asset at regular intervals.
+
+Drawdown: The decline from a peak to a trough in an account.
+
+FOMO: Fear of Missing Out — emotion that drives impulsive decisions.
+
+Higher High (HH): Price reaches a new high above the previous one. Signals an uptrend.
+
+Higher Low (HL): A pullback low that's higher than the previous low. Confirms uptrend.
+
+Hodl: Holding an asset long term regardless of price swings.
+
+Leverage: Using borrowed capital to increase market exposure.
+
+Liquidation Price: The level where a leveraged position is automatically closed.
+
+Lower High (LH): Signals weakness in an uptrend or a possible reversal.
+
+Lower Low (LL): Signals a downtrend.
+
+Margin Call: A broker's request to add funds to maintain open positions.
+
+Memecoins: Cryptocurrencies born as jokes that often gain traction through speculation.
+
+Retracement: A temporary move against the main trend.
+
+ROI (Return on Investment): A measure of an investment's financial performance.
+
+Short Position: A trade that profits from a price decline.
+
+Swing Trading: Capturing intermediate price moves over days or weeks.
+
+VWAP: Volume-Weighted Average Price.`
+  },
+  b3: {
+    date: "26 noviembre 2024",
+    title_es: "Del Auge al Colapso: Lecciones de la Burbuja Dotcom y la Caída de Roma para el Mercado de Criptomonedas",
+    title_en: "From Boom to Bust: Lessons from the Dotcom Bubble and the Fall of Rome for the Crypto Market",
+    body_es: `La historia nos enseña a través de ciclos de ascenso y caída, y el mercado de criptomonedas actual no es la excepción. Esta temporada ha sido desafiante, con un flujo de capital errático y movimientos de precios difíciles de predecir, evocando tanto la burbuja dotcom de finales de los años 90 como episodios históricos emblemáticos como la caída del imperio romano en el año 476 d.C.
+
+La influencia de los ETFs y figuras como Michael Saylor ha alterado la dinámica tradicional de Bitcoin, creando efectos secundarios en las altcoins. Este cambio ha generado una temporada de altcoins impredecible, donde los inversores tienen que adaptarse rápidamente a rotaciones inesperadas y vender en momentos críticos para evitar pérdidas significativas.
+
+Al igual que durante la decadencia de Roma, donde la devaluación monetaria y la hiperinflación debilitaron la economía, el mercado cripto enfrenta una fuga de liquidez hacia proyectos de valor cuestionable como las memecoins. Estos proyectos, que a menudo carecen de un fundamento sólido, son comparables a las empresas sin propuestas de valor claras que surgieron justo antes del colapso de la burbuja dotcom.
+
+El papel de las regulaciones es crucial en este contexto. A corto plazo, podrían provocar turbulencias en el mercado, pero son necesarias para evitar una crisis más profunda, al asegurar un ecosistema más regulado y estable.
+
+Mirando hacia el futuro, es optimista pensar que surgirán criptomonedas con aplicaciones reales y beneficios tangibles, comparables a cómo empresas como Amazon y Apple sobrevivieron y prosperaron después de la burbuja dotcom.
+
+Con cada ciclo, marcado por la incertidumbre, nace la oportunidad de aprendizaje y adaptación, preparando el escenario para la próxima generación de innovaciones en la blockchain.`,
+    body_en: `History teaches through cycles of rise and fall, and today's crypto market is no exception. This season has been challenging, with erratic capital flows and hard-to-predict price moves, echoing both the late-90s dotcom bubble and historic episodes like the fall of the Roman Empire in 476 AD.
+
+The influence of ETFs and figures like Michael Saylor has altered Bitcoin's traditional dynamics, creating ripple effects on altcoins. This has led to an unpredictable altseason, where investors must quickly adapt to unexpected rotations and sell at critical moments to avoid significant losses.
+
+Just as Rome's decline saw currency devaluation and hyperinflation weaken the economy, the crypto market faces a liquidity drain toward projects of questionable value like memecoins. These projects, often lacking solid fundamentals, are comparable to companies with no clear value proposition that emerged just before the dotcom crash.
+
+Regulation plays a crucial role here. In the short term it could cause market turbulence, but it's necessary to avoid a deeper crisis by ensuring a more regulated, stable ecosystem.
+
+Looking forward, it's reasonable to expect cryptocurrencies with real applications and tangible benefits to emerge — comparable to how Amazon and Apple survived and thrived after the dotcom bubble.
+
+With every cycle marked by uncertainty comes the opportunity to learn and adapt, setting the stage for the next generation of blockchain innovation.`
+  },
+  b4: {
+    date: "8 mayo 2020",
+    title_es: "Cómo Preparar tu Propia Estación de Trading",
+    title_en: "How to Set Up Your Own Trading Station",
+    body_es: `Preparar una estación de trading puede ser algo intimidante, particularmente si eres una persona que no tiene mucha destreza tecnológicamente hablando. Hay 5 pasos que debes tomar en cuenta:
+
+1. Escritorio de oficina y silla: el escritorio debe ser suficientemente grande para colocar tus pantallas y laptop, y dejar espacio para escribir notas. La silla debe ser cómoda, con buen soporte lumbar y pélvico, lo que ayudará a evitar dolores causados por mala postura.
+
+2. Computador de Gamers: diseñados para alto rendimiento sin riesgo de recalentarse. Necesitas un solid state drive de 256GB o más, y bastante RAM (mínimo 8GB, 16GB recomendado).
+
+3. Monitores externos con conexión USB: bajo costo y fáciles de instalar, eliminan el exceso de cables.
+
+4. Adaptador de puertos USB: transforma 1 conexión USB en 4 o más.
+
+5. Hard-Wired o WiFi: usa cable siempre que sea posible, pero una conexión WiFi estable te permitirá trabajar desde cualquier parte del mundo.`,
+    body_en: `Setting up a trading station can feel intimidating, especially if you're not very tech-savvy. Here are 5 steps to consider:
+
+1. Desk and chair: your desk should be big enough for your screens and laptop, with room for notes. Your chair should offer good lumbar and pelvic support to avoid posture-related pain.
+
+2. Gaming PC: built for high performance without overheating. You'll want a solid state drive of 256GB or more, and enough RAM (8GB minimum, 16GB recommended).
+
+3. External USB monitors: low cost and easy to set up, they eliminate excess cables.
+
+4. USB hub adapter: turns 1 USB connection into 4 or more.
+
+5. Hard-wired or WiFi: use ethernet when possible, but a stable WiFi connection lets you work from anywhere in the world.`
+  },
+  b5: {
+    date: "17 abril 2020",
+    title_es: "Importancia de Usar un Diario de Trading",
+    title_en: "The Importance of Keeping a Trading Journal",
+    body_es: `El uso de un Diario de Trading es una de las claves para tener éxito como trader. No importa si eres rentable o no, un Trading Journal te ayudará a reconocer patrones en tus operaciones ganadoras y perdedoras, tus debilidades y fortalezas. Lo que no puedes identificar, no lo puedes mejorar.
+
+Un diario de trading debe incluir:
+
+1. Hora y fecha
+2. Captura de pantalla del setup o patrón
+3. % de riesgo y cantidad de $ de riesgo (se recomienda máximo 2% por operación)
+4. Tamaño de la posición
+5. Nombre del setup / razón de la entrada
+6. Precio de entrada y stop loss
+7. Targets o precios de toma de ganancias
+8. Relación riesgo/recompensa (mínimo recomendado 1:2, idealmente 1:3)
+9. Emociones al tomar el trade
+10. Notas de gestión del trade
+11. Resultados (% y $)
+12. Comentarios y notas personales
+
+Un diario de trading te separará de los aficionados.`,
+    body_en: `Keeping a Trading Journal is one of the keys to success as a trader. Whether you're profitable or not, a journal helps you spot patterns in your winning and losing trades, and identify your weaknesses and strengths. What you can't identify, you can't improve.
+
+A trading journal should include:
+
+1. Time and date
+2. Screenshot of the setup or pattern
+3. Risk % and $ amount at risk (max 2% per trade recommended)
+4. Position size
+5. Setup name / reason for entry
+6. Entry price and stop loss
+7. Targets / take-profit levels
+8. Risk/reward ratio (minimum 1:2, ideally 1:3)
+9. Emotions when taking the trade
+10. Trade management notes
+11. Results (% and $)
+12. Personal comments and notes
+
+A trading journal is what separates you from amateurs.`
+  },
+  b6: {
+    date: "27 marzo 2020",
+    title_es: "Tips Para Gestionar Riesgo Cuando Usas Apalancamiento",
+    title_en: "Tips for Managing Risk When Using Leverage",
+    body_es: `Apalancamiento o Margin Trading es la práctica de usar fondos prestados de un broker para tradear diferentes activos. Puede aumentar tus ganancias, pero también puede quemar tu cuenta.
+
+Algunos consejos al utilizar apalancamiento:
+
+1. Conozca las reglas: cada broker tiene reglas distintas que podrían romper una estrategia exitosa. Debes tener una comprensión completa de las reglas de trading del broker que utilizas.
+
+2. Comience poco a poco: empieza con niveles bajos de apalancamiento. Una vez que generes confianza, podrás aumentar el tamaño de tu posición.
+
+3. Corte las pérdidas rápidamente: usa stop loss en todas las operaciones. Con apalancamiento, los cambios bruscos de precio se multiplican por la cantidad prestada.
+
+4. Controle sus posiciones: monitorea de cerca tus operaciones apalancadas y reduce las pérdidas antes de que afecten gravemente tu cuenta.`,
+    body_en: `Leverage or Margin Trading is the practice of using funds borrowed from a broker to trade financial assets. It can amplify your gains, but it can also blow up your account.
+
+Some tips when using leverage:
+
+1. Know the rules: every broker has different rules that could break an otherwise successful strategy. Understand your broker's trading rules fully.
+
+2. Start small: begin with low leverage levels. Once you build confidence, you can increase your position size.
+
+3. Cut losses fast: use a stop loss on every trade. With leverage, sharp price moves are multiplied by the amount borrowed.
+
+4. Monitor your positions: closely watch your leveraged trades and cut losses before they seriously damage your account.`
+  }
+};
+
+function openBlog(id){
+  const post = blogPosts[id];
+  const lang = document.documentElement.lang;
+  const title = lang === 'en' ? post.title_en : post.title_es;
+  const body = lang === 'en' ? post.body_en : post.body_es;
+  document.getElementById('bmodal-content').innerHTML =
+    '<div class="bdate">'+post.date+'</div><h2>'+title+'</h2><div class="bmodal-body">'+body+'</div>';
+  document.getElementById('bmodal-overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeBlog(){
+  document.getElementById('bmodal-overlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+function setLang(l){
+  document.documentElement.lang = l;
+  document.getElementById('btnES').classList.toggle('active', l==='es');
+  document.getElementById('btnEN').classList.toggle('active', l==='en');
+  localStorage.setItem('lang', l);
+}
+(function(){
+  const saved = localStorage.getItem('lang') || 'es';
+  setLang(saved);
+})();
+</script>
+
 <section class="exc" id="exchanges">
   <div class="container">
     <div class="sec-eyebrow">Grupo Gratuito</div>
@@ -520,12 +959,13 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding
   <div class="foot-tag">Academy</div>
   <div class="foot-links">
     <a href="#track">Track Record</a>
-    <a href="#curso">Curso</a>
-    <a href="#vip">Comunidad VIP</a>
-    <a href="#servicios">Asesoría 1:1</a>
+    <a href="#curso" class="es-only">Curso</a><a href="#curso" class="en-only">Course</a>
+    <a href="#vip" class="es-only">Comunidad VIP</a><a href="#vip" class="en-only">VIP Community</a>
+    <a href="#servicios" class="es-only">Asesoría 1:1</a><a href="#servicios" class="en-only">1:1 Coaching</a>
+    <a href="#blog">Blog</a>
     <a href="#exchanges">Exchanges</a>
-    <a href="#libro">Libro</a>
-    <a href="#contacto">Contacto</a>
+    <a href="#libro" class="es-only">Libro</a><a href="#libro" class="en-only">Book</a>
+    <a href="#contacto" class="es-only">Contacto</a><a href="#contacto" class="en-only">Contact</a>
   </div>
   <div class="foot-links">
     <a href="https://www.youtube.com/channel/UC8Kx2j15y2Mxe9DWtQpvSxQ" target="_blank" rel="noopener">YouTube</a>
