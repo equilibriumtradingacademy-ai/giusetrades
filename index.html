@@ -224,6 +224,23 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding
   section{padding:66px 0}
   .form-wrap{padding:28px 22px}
 }
+
+/* RESENAS */
+.rev{background:var(--navy);border-top:1px solid rgba(41,169,232,.12)}
+.rev-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:22px;margin-top:48px}
+.rcard{background:var(--navy3);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:28px 26px;display:flex;flex-direction:column;transition:all .25s}
+.rcard:hover{border-color:var(--cyan);transform:translateY(-3px)}
+.rquote{font-size:1.9rem;line-height:1;color:var(--cyan);opacity:.5;font-family:'Barlow Condensed',sans-serif;font-weight:900;margin-bottom:10px}
+.rtext{font-size:.92rem;color:var(--light);line-height:1.75;flex-grow:1}
+.rfoot{margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.08)}
+.rname{font-family:'Barlow Condensed',sans-serif;font-size:1.15rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--white);line-height:1.2}
+.rtags{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+.rtag{font-size:.65rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;padding:4px 10px;border-radius:100px;background:rgba(41,169,232,.12);border:1px solid rgba(41,169,232,.32);color:var(--cyan-lt)}
+.rtag.y{background:rgba(255,224,27,.1);border-color:rgba(255,224,27,.32);color:var(--yellow)}
+.rtag.g{background:rgba(140,198,63,.1);border-color:rgba(140,198,63,.32);color:var(--green)}
+.rnote{margin-top:40px;text-align:center;font-size:.85rem;color:var(--gray)}
+.rnote a{color:var(--cyan);font-weight:700;text-decoration:none}
+.rnote a:hover{color:var(--cyan-lt)}
 </style>
 </head>
 <body>
@@ -235,6 +252,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding
   </a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#track" class="es-only">Track Record</a><a href="#track" class="en-only">Track Record</a></li>
+    <li><a href="#resenas" class="es-only">Reseñas</a><a href="#resenas" class="en-only">Reviews</a></li>
     <li><a href="#curso" class="es-only">Curso</a><a href="#curso" class="en-only">Course</a></li>
     <li><a href="#vip" class="es-only">Comunidad VIP</a><a href="#vip" class="en-only">VIP Community</a></li>
     <li><a href="#servicios" class="es-only">Asesoría</a><a href="#servicios" class="en-only">Coaching</a></li>
@@ -280,26 +298,17 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding
     <div class="track-grid">
 
       <div class="tc">
-        <img src="img/btc-cycle.png" alt="Bitcoin ciclo 2018-2021" class="tc-img">
+        <img src="img/btc-track.png" alt="Bitcoin: calls públicos 2018-2026" class="tc-img">
         <div class="tc-body">
-          <div class="tc-top"><div class="tc-asset">Bitcoin</div><div class="tc-pct">+1,400%</div></div>
-          <div class="tc-date">Nov 2018 → Nov 2021</div>
-          <p class="tc-desc">"Es el momento de comprar Bitcoin" publicado en $4,100. Luego advertí el top del ciclo en noviembre 2021 antes de la caída del 78%. Ambos calls documentados públicamente en Facebook.</p>
+          <div class="tc-top"><div class="tc-asset">Bitcoin</div><div class="tc-pct">2018 → 2026</div></div>
+          <div class="tc-date">8 años de calls públicos</div>
+          <p class="tc-desc es-only">Noviembre 2018: "Es el momento de comprar Bitcoin para todos los interesados", publicado cerca de $4,100. Noviembre 2021: advertencia de que 2022 sería un año muy duro, justo antes de la caída del 78%. Noviembre y diciembre 2022: "Bottom is in" cerca de $15,300, cuando Bloomberg titulaba "In Ruins". Noviembre 2024: primera toma de ganancias y rotación hacia altcoins. Abril 2025: "estamos en niveles de compra" mientras el resto hablaba del fin del mundo. Septiembre 2025: reporte crítico protegiendo capital con shorts estratégicos antes de que el mercado mostrara grietas. Todo con fecha y hora verificable.</p>
+          <p class="tc-desc en-only">November 2018: "It's time to buy Bitcoin", posted near $4,100. November 2021: warning that 2022 would be a brutal year, right before the 78% drawdown. November and December 2022: "Bottom is in" near $15,300, while Bloomberg headlined "In Ruins". November 2024: first take profit and rotation into altcoins. April 2025: "we are at buying levels" while everyone else called the end of the world. September 2025: critical report protecting capital with strategic shorts before the market showed cracks. All of it timestamped and public.</p>
         </div>
       </div>
 
       <div class="tc">
-        <img src="img/btc-bottom.png" alt="Bitcoin bottom noviembre 2022" class="tc-img">
-        <div class="tc-body">
-          <div class="tc-top"><div class="tc-asset">Bitcoin · Bottom</div><div class="tc-pct">+553%</div></div>
-          <div class="tc-date">23 Nov 2022</div>
-          <p class="tc-desc es-only">"Bottom is in" publicado el 23 de noviembre de 2022, cuando Bloomberg titulaba "In Ruins" y The Economist "Crypto's Downfall". El sentimiento estaba en su punto más bajo. Compra cerca de $15,300 y primera toma de ganancias en $99,950.</p>
-          <p class="tc-desc en-only">"Bottom is in" published on November 23, 2022, when Bloomberg headlined "In Ruins" and The Economist "Crypto's Downfall". Sentiment was at its lowest point. Entry near $15,300 and first take profit at $99,950.</p>
-        </div>
-      </div>
-
-      <div class="tc">
-        <img src="img/silver.png" alt="Plata 2020-2026 calls públicos" class="tc-img">
+        <img src="img/silver-track.png" alt="Plata: calls públicos 2020-2026" class="tc-img">
         <div class="tc-body">
           <div class="tc-top"><div class="tc-asset">Plata</div><div class="tc-pct">+400%</div></div>
           <div class="tc-date">Jul 2020 → Ene 2026</div>
@@ -320,6 +329,60 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding
       </div>
 
     </div>
+  </div>
+</section>
+
+<section class="rev" id="resenas">
+  <div class="container">
+    <div class="sec-eyebrow es-only">Reseñas</div>
+    <div class="sec-eyebrow en-only">Reviews</div>
+    <div class="sec-title es-only">Lo que dicen<br><em>quienes ya están dentro</em></div>
+    <div class="sec-title en-only">What the people<br><em>already inside say</em></div>
+    <p class="sec-sub es-only">Publicadas con el consentimiento de cada persona. Las etiquetas indican en qué servicios ha participado cada una.</p>
+    <p class="sec-sub en-only">Published with each person's consent. The tags show which services each of them has taken part in.</p>
+
+    <div class="rev-grid">
+
+      <div class="rcard">
+        <div class="rquote">&ldquo;</div>
+        <p class="rtext">Luego de muchos fracasos y estando a punto de retirarme del mercado, encontré en Equilibrium la confianza, el acompañamiento y el enfoque que necesitaba. Fue un punto de inflexión en mi camino como inversor. No eres solamente un visionario y gran trader, sino también una excelente persona, que acompaña, escucha y se interesa por cada uno de nosotros. Vengo siguiendo tus comentarios, posts, videos y sugerencias, y la verdad es que se aprende muchísimo.</p>
+        <div class="rfoot">
+          <div class="rname">Mauricio Chiavassa</div>
+          <div class="rtags"><span class="rtag y">Comunidad VIP</span><span class="rtag g">Grupo gratuito</span></div>
+        </div>
+      </div>
+
+      <div class="rcard">
+        <div class="rquote">&ldquo;</div>
+        <p class="rtext">He adquirido reportes mensuales y estoy en el grupo de Telegram. Equilibrium no es para personas que esperan que les den todo en la mano y análisis de gráficos menores todos los días: se enfoca en gráficos de altas temporalidades. Cuando ha señalado zonas de alerta, de compra y de venta, ha demostrado tener razón a través del tiempo, y se basa en objetivos. Él no dice &laquo;creo que&raquo; ni &laquo;es por Trump&raquo;, siempre hay un análisis detrás. Estoy agradecido porque me ayudó muchísimo a mejorar mi análisis por mi cuenta y a ver cómo el mundo crypto está inundado de gente que no sabe absolutamente nada e intenta estafar. Lo recomiendo 100%.</p>
+        <div class="rfoot">
+          <div class="rname">Juan Alfonso Villarreal García</div>
+          <div class="rtags"><span class="rtag y">Comunidad VIP</span><span class="rtag g">Grupo gratuito</span></div>
+        </div>
+      </div>
+
+      <div class="rcard">
+        <div class="rquote">&ldquo;</div>
+        <p class="rtext">Equilibrium Trading es una gran comunidad. El profesor, con su amplio conocimiento en mercados financieros y crypto, personalmente me ayudó mucho a pulir mis estrategias y planes de trading. Hace fácil el aprendizaje y, sobre todo, te ayuda a lograr pensar como un verdadero trader. El grupo VIP, bastante recomendable: setups y señales claras. El contenido de Equilibrium Trading es información valiosa que no encuentras en cualquier lugar.</p>
+        <div class="rfoot">
+          <div class="rname">Viridiana</div>
+          <div class="rtags"><span class="rtag y">Comunidad VIP</span><span class="rtag">Mentoría 1:1</span><span class="rtag">Cursos</span><span class="rtag g">Grupo gratuito</span></div>
+        </div>
+      </div>
+
+      <div class="rcard">
+        <div class="rquote">&ldquo;</div>
+        <p class="rtext">Mi experiencia con Equilibrium Trading ha sido excelente. Llevo más de 10 años haciendo cursos, siguiendo los grupos y también operando sus trades, y durante todo este tiempo siempre he encontrado un nivel de profesionalismo y dedicación excepcional. Algo que realmente destaca es la calidad de los análisis y la precisión de los trades. Muchas veces han sido literalmente ojo de toro, pero más allá de los resultados puntuales, lo que más valoro es la metodología, el seguimiento y la forma profesional en la que se trabaja. Después de tantos años, Equilibrium Trading se ha ganado completamente mi confianza. 100% recomendado.</p>
+        <div class="rfoot">
+          <div class="rname">Mauro Salerno</div>
+          <div class="rtags"><span class="rtag y">Comunidad VIP</span><span class="rtag">Cursos</span><span class="rtag">Seminarios</span><span class="rtag g">Grupo gratuito</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="rnote es-only">¿Formas parte de la comunidad y quieres dejar la tuya? <a href="#contacto">Escríbeme aquí</a>.</p>
+    <p class="rnote en-only">Part of the community and want to leave yours? <a href="#contacto">Write to me here</a>.</p>
   </div>
 </section>
 
@@ -351,6 +414,50 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding
     </div>
     <div style="text-align:center;margin-top:40px">
       <a href="#contacto" class="btn-secondary">Accede al curso completo</a>
+    </div>
+  </div>
+</section>
+
+<section class="exc" id="exchanges">
+  <div class="container">
+    <div class="sec-eyebrow">Grupo Gratuito</div>
+    <div class="sec-title">Entra sin pagar<br><em>membresía</em></div>
+    <p class="sec-sub">Comparto mi visión general del mercado en un grupo abierto de Telegram. El único requisito es registrarte con uno de mis links de referido y mantenerte activo.</p>
+    <div class="req-box">
+      <div class="req-title">Requisitos de acceso</div>
+      <ul class="req-list">
+        <li>Registro con mi link de referido</li>
+        <li><b>Coinbase y Robinhood:</b> compra mínima de $50</li>
+        <li><b>BingX y Base:</b> depósito mínimo de $200</li>
+        <li>Mantener la cuenta activa con movimientos mensuales</li>
+      </ul>
+      <p style="margin-top:16px;font-size:.85rem;color:var(--gray);line-height:1.6">No exijo un volumen mensual específico. Solo que la cuenta esté viva. Cuando termines el registro, escríbeme por el formulario y te doy acceso.</p>
+    </div>
+    <div class="exc-grid">
+      <div class="ecard">
+        <div class="ename">BingX</div>
+        <div class="eregion">Internacional</div>
+        <div class="edesc">Spot y futuros con buena liquidez. Recomendado para quienes están fuera de Estados Unidos y quieren operar derivados.</div>
+        <a href="https://bingxdao.com/partner/equilibriumtrading/" target="_blank" rel="noopener" class="elink">Registrarme</a>
+      </div>
+      <div class="ecard">
+        <div class="ename">Coinbase</div>
+        <div class="eregion">Global</div>
+        <div class="edesc">El exchange más regulado y sencillo para empezar. Disponible en Estados Unidos y en la mayoría del mundo.</div>
+        <a href="https://coinbase.com/join/H7HPXW6?src=android-link" target="_blank" rel="noopener" class="elink">Registrarme</a>
+      </div>
+      <div class="ecard">
+        <div class="ename">Robinhood</div>
+        <div class="eregion">Estados Unidos</div>
+        <div class="edesc">Cripto y acciones en una sola app. Recibes una acción gratis al registrarte.</div>
+        <a href="https://join.robinhood.com/hood-05057ab2f" target="_blank" rel="noopener" class="elink">Registrarme</a>
+      </div>
+      <div class="ecard">
+        <div class="ename">Base Wallet</div>
+        <div class="eregion">DeFi · Global</div>
+        <div class="edesc">Wallet on-chain para operar directamente en Base. Usa el código al crear tu cuenta.</div>
+        <div class="ecode">YM6MY649</div>
+      </div>
     </div>
   </div>
 </section>
@@ -398,7 +505,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding
         <ul class="mfeat">
           <li>Todo lo del plan semestral</li>
           <li>30 min 1:1 cada trimestre</li>
-          <li>Revisión completa de portafolio</li>
+          <li>Sesión de revisión de portafolio</li>
           <li>Video de estrategia en futuros</li>
           <li>Acceso a todo el contenido nuevo</li>
         </ul>
@@ -441,14 +548,26 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding
 
       <div class="scard">
         <div class="stype">Revisión de Portafolio</div>
-        <div class="sfor">Consultoría directa</div>
-        <p class="sdesc">Analizamos tu portafolio completo posición por posición: exposición real, correlaciones, niveles de invalidación y qué rotar. Sales con un plan escrito, no con opiniones.</p>
+        <div class="sfor">Programa de 6 meses</div>
+        <p class="sdesc">Analizamos tu portafolio completo posición por posición: exposición real, correlaciones, niveles de invalidación y qué rotar. Sales con un plan escrito a seis meses, y lo revisamos mes a mes para ajustarlo al mercado.</p>
         <ul class="stiers">
-          <li><span>Sesión completa</span><b>$100</b></li>
-          <li><span>Incluida en plan anual</span><b>Gratis</b></li>
-          <li><span>Plan de acción escrito</span><b>✓</b></li>
+          <li><span>Programa completo</span><b>$1,000</b></li>
+          <li><span>Plan escrito a 6 meses</span><b>✓</b></li>
+          <li><span>Evaluación y ajuste cada mes</span><b>✓</b></li>
         </ul>
         <a href="#contacto" class="btn-secondary">Aplica ahora</a>
+      </div>
+
+      <div class="scard">
+        <div class="stype">Mentoría 1:1</div>
+        <div class="sfor">Acompañamiento por un año</div>
+        <p class="sdesc">El nivel más cercano de trabajo conmigo. Un año completo construyendo tu sistema, ejecutando tus posiciones y corrigiendo en tiempo real. Empieza con una preevaluación para confirmar que tiene sentido para tu situación.</p>
+        <ul class="stiers">
+          <li><span>Preevaluación previa</span><b>Requerida</b></li>
+          <li><span>12 meses de acompañamiento</span><b>✓</b></li>
+          <li><span>Inversión</span><b>Consultar</b></li>
+        </ul>
+        <a href="#contacto" class="btn-primary">Solicitar preevaluación</a>
       </div>
 
     </div>
@@ -849,49 +968,6 @@ function setLang(l){
 })();
 </script>
 
-<section class="exc" id="exchanges">
-  <div class="container">
-    <div class="sec-eyebrow">Grupo Gratuito</div>
-    <div class="sec-title">Entra sin pagar<br><em>membresía</em></div>
-    <p class="sec-sub">Comparto mi visión general del mercado en un grupo abierto de Telegram. El único requisito es registrarte con uno de mis links de referido y mantenerte activo.</p>
-    <div class="req-box">
-      <div class="req-title">Requisitos de acceso</div>
-      <ul class="req-list">
-        <li>Registro con mi link de referido</li>
-        <li>Depósito mínimo de $200</li>
-        <li>Volumen mensual de $500</li>
-        <li>Cuenta activa cada mes</li>
-      </ul>
-    </div>
-    <div class="exc-grid">
-      <div class="ecard">
-        <div class="ename">BingX</div>
-        <div class="eregion">Internacional</div>
-        <div class="edesc">Spot y futuros con buena liquidez. Recomendado para quienes están fuera de Estados Unidos.</div>
-        <a href="https://bingxdao.com/partner/equilibriumtrading/" target="_blank" rel="noopener" class="elink">Registrarme</a>
-      </div>
-      <div class="ecard">
-        <div class="ename">Coinbase</div>
-        <div class="eregion">Estados Unidos</div>
-        <div class="edesc">El exchange más regulado y sencillo para residentes en Estados Unidos.</div>
-        <a href="https://coinbase.com/join/H7HPXW6?src=android-link" target="_blank" rel="noopener" class="elink">Registrarme</a>
-      </div>
-      <div class="ecard">
-        <div class="ename">Robinhood</div>
-        <div class="eregion">Estados Unidos</div>
-        <div class="edesc">Cripto y acciones en una sola app. Recibes una acción gratis al registrarte.</div>
-        <a href="https://join.robinhood.com/hood-05057ab2f" target="_blank" rel="noopener" class="elink">Registrarme</a>
-      </div>
-      <div class="ecard">
-        <div class="ename">Base Wallet</div>
-        <div class="eregion">DeFi · Global</div>
-        <div class="edesc">Wallet on-chain para operar directamente en Base. Usa el código al crear tu cuenta.</div>
-        <div class="ecode">YM6MY649</div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="libro" id="libro">
   <div class="container">
     <div class="libro-in">
@@ -938,6 +1014,9 @@ function setLang(l){
             <option value="Clase 1:1 (1 hora $100)">Clase 1:1 · 1 hora ($100)</option>
             <option value="Paquete 6 horas $500">Paquete · 6 horas ($500)</option>
             <option value="Paquete 12 horas $800">Paquete · 12 horas ($800)</option>
+            <option value="Mentoria 1:1 - acompanamiento 1 ano">Mentoría 1:1 · Acompañamiento 1 año</option>
+            <option value="Revision de Portafolio - programa 6 meses $1000">Revisión de Portafolio · Programa 6 meses ($1,000)</option>
+            <option value="Clases grupales">Clases grupales</option>
             <option value="Grupo gratuito de Telegram">Grupo gratuito de Telegram</option>
             <option value="Otra consulta">Otra consulta</option>
           </select>
@@ -959,6 +1038,7 @@ function setLang(l){
   <div class="foot-tag">Academy</div>
   <div class="foot-links">
     <a href="#track">Track Record</a>
+    <a href="#resenas" class="es-only">Reseñas</a><a href="#resenas" class="en-only">Reviews</a>
     <a href="#curso" class="es-only">Curso</a><a href="#curso" class="en-only">Course</a>
     <a href="#vip" class="es-only">Comunidad VIP</a><a href="#vip" class="en-only">VIP Community</a>
     <a href="#servicios" class="es-only">Asesoría 1:1</a><a href="#servicios" class="en-only">1:1 Coaching</a>
