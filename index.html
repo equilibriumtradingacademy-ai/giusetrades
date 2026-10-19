@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Equilibrium Trading Academy | Giuseppe Cammarano</title>
 <meta name="description" content="Educación en criptomonedas y commodities. Más de 13 años de experiencia con +90% de efectividad en calls públicos.">
+<meta property="og:title" content="Equilibrium Trading Academy | Giuseppe Cammarano">
+<meta property="og:description" content="Educación en criptomonedas y commodities. Más de 13 años de experiencia con +90% de efectividad en calls públicos.">
+<meta property="og:image" content="img/logo.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Equilibrium Trading Academy | Giuseppe Cammarano">
+<meta name="twitter:description" content="Educación en criptomonedas y commodities. Más de 13 años de experiencia con +90% de efectividad en calls públicos.">
+<meta name="twitter:image" content="img/logo.png">
 <link rel="icon" href="img/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,6 +59,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .btn-primary:hover{background:var(--orange);transform:translateY(-2px);box-shadow:0 8px 24px rgba(245,145,30,.3)}
 .btn-secondary{background:transparent;color:var(--cyan-lt);padding:16px 34px;border-radius:5px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.02rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:all .2s;border:1.5px solid var(--cyan);cursor:pointer;display:inline-block}
 .btn-secondary:hover{background:rgba(41,169,232,.13);border-color:var(--cyan-lt)}
+
+/* HABLA CON GIUSEPPE */
+.habla{background:var(--navy);border-top:1px solid rgba(41,169,232,.12)}
+.hab-in{max-width:700px;margin:0 auto;text-align:center}
+.hab-photo{width:160px;height:160px;border-radius:50%;border:3px solid var(--cyan);object-fit:cover;box-shadow:0 10px 36px rgba(41,169,232,.35);margin-bottom:24px}
+.hab-name{font-family:'Barlow Condensed',sans-serif;font-size:2.2rem;font-weight:900;text-transform:uppercase;letter-spacing:.02em;margin-bottom:14px}
+.hab-text{color:var(--gray);line-height:1.72;margin-bottom:30px}
 
 /* STATS */
 .stats{position:relative;z-index:2;display:flex;justify-content:center;margin-top:64px;border-top:1px solid rgba(255,255,255,.07);padding-top:40px;flex-wrap:wrap}
@@ -270,6 +285,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding
     <li><a href="#servicios" class="es-only">Asesoría</a><a href="#servicios" class="en-only">Coaching</a></li>
     <li><a href="#blog">Blog</a></li>
     <li><a href="#libro" class="es-only">Libro</a><a href="#libro" class="en-only">Book</a></li>
+    <li><a href="#habla" class="es-only">Habla con Giuseppe</a><a href="#habla" class="en-only">Talk to Giuseppe</a></li>
     <li><a href="#contacto" class="nav-cta es-only">Aplica ahora</a><a href="#contacto" class="nav-cta en-only">Apply now</a></li>
     <li>
       <div class="lang-toggle">
@@ -310,7 +326,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding
     <div class="track-grid">
 
       <div class="tc">
-        <img src="img/btc-track.png" alt="Bitcoin: calls públicos 2018-2026" class="tc-img">
+        <img loading="lazy" src="img/btc-track.png" alt="Bitcoin: calls públicos 2018-2026" class="tc-img">
         <div class="tc-body">
           <div class="tc-top"><div class="tc-asset">Bitcoin</div><div class="tc-pct">2018 → 2026</div></div>
           <div class="tc-date">8 años de calls públicos</div>
@@ -320,7 +336,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding
       </div>
 
       <div class="tc">
-        <img src="img/silver-track.png" alt="Plata: calls públicos 2020-2026" class="tc-img">
+        <img loading="lazy" src="img/silver-track.png" alt="Plata: calls públicos 2020-2026" class="tc-img">
         <div class="tc-body">
           <div class="tc-top"><div class="tc-asset">Plata</div><div class="tc-pct">+400%</div></div>
           <div class="tc-date">Jul 2020 → Ene 2026</div>
@@ -332,7 +348,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding
 
 
       <div class="tc">
-        <img src="img/uranium.png" alt="Uranio URA 2019-2026" class="tc-img">
+        <img loading="lazy" src="img/uranium.png" alt="Uranio URA 2019-2026" class="tc-img">
         <div class="tc-body">
           <div class="tc-top"><div class="tc-asset">Uranio · URA</div><div class="tc-pct">+471%</div></div>
           <div class="tc-date">Ene 2019 → 2026</div>
@@ -1024,7 +1040,21 @@ function setLang(l){
         <div class="libro-price"><div class="libro-amt">$20</div><div class="libro-note">Versión digital · Kindle</div></div>
         <a href="https://www.amazon.com/Dominando-Mercado-Criptomonedas-Maximiza-Ganancias-ebook/dp/B0DRDFMDBX/" target="_blank" rel="noopener" class="btn-primary">Comprar en Amazon</a>
       </div>
-      <div><img src="img/libro.png" alt="Dominando el Mercado de Criptomonedas" class="libro-img"></div>
+      <div><img loading="lazy" src="img/libro.png" alt="Dominando el Mercado de Criptomonedas" class="libro-img"></div>
+    </div>
+  </div>
+</section>
+
+<section class="habla" id="habla">
+  <div class="container">
+    <div class="hab-in">
+      <img loading="lazy" src="img/giuseppe.jpg" alt="Giuseppe Cammarano" class="hab-photo">
+      <div class="hab-name es-only">Habla con Giuseppe</div>
+      <div class="hab-name en-only">Talk to Giuseppe</div>
+      <p class="hab-text es-only">&iquest;Tienes dudas sobre el curso, la comunidad o por d&oacute;nde empezar en el mercado? Escr&iacute;beme por Messenger y conversamos. Primero quiero entender qu&eacute; est&aacute;s buscando; si encaja con lo que hacemos en Equilibrium, te muestro el camino, empezando por el material gratuito.</p>
+      <p class="hab-text en-only">Questions about the course, the community, or where to start in the market? Message me on Messenger and let&apos;s talk. First I want to understand what you&apos;re looking for; if it&apos;s a fit with what we do at Equilibrium, I&apos;ll show you the way, starting with the free material.</p>
+      <a href="https://m.me/Equilibriumtradinges" target="_blank" rel="noopener" class="btn-secondary es-only">Escr&iacute;beme por Messenger</a>
+      <a href="https://m.me/Equilibriumtradinges" target="_blank" rel="noopener" class="btn-secondary en-only">Message me on Messenger</a>
     </div>
   </div>
 </section>
@@ -1053,19 +1083,14 @@ function setLang(l){
           <label class="flabel" for="producto">¿Qué te interesa?</label>
           <select class="fselect" id="producto" name="producto" required>
             <option value="">Selecciona una opción</option>
-            <option value="Grupo gratuito de Telegram">Grupo gratuito de Telegram</option>
-            <option value="Newsletter mensual $15/mes">Newsletter mensual ($15/mes)</option>
-            <option value="Curso completo $200">Curso completo ($200)</option>
-            <option value="Comunidad VIP - Anual renovacion $499">Comunidad VIP · Anual renovación ($499)</option>
-            <option value="Comunidad VIP - Lista de espera nuevos $749">Comunidad VIP · Lista de espera, nuevos ($749)</option>
-            <option value="Preparacion prueba de fondeo $2000">Preparación prueba de fondeo ($2,000)</option>
-            <option value="Mentoria 1:1 - acompanamiento 1 ano">Mentoría 1:1 · Acompañamiento 1 año</option>
-            <option value="Revision de Portafolio - programa 6 meses $1000">Revisión de Portafolio · Programa 6 meses ($1,000)</option>
-            <option value="Clase 1:1 (1 hora $100)">Clase 1:1 · 1 hora ($100)</option>
-            <option value="Paquete 6 horas $500">Paquete · 6 horas ($500)</option>
-            <option value="Paquete 12 horas $800">Paquete · 12 horas ($800)</option>
-            <option value="Clases grupales">Clases grupales</option>
-            <option value="Otra consulta">Otra consulta</option>
+            <option value="Grupo VIP, lista de espera">Grupo VIP, lista de espera</option>
+            <option value="Curso completo $200">Curso completo $200</option>
+            <option value="Clases 1:1">Clases 1:1</option>
+            <option value="Revisión de portafolio $1,000">Revisión de portafolio $1,000</option>
+            <option value="Preparación para fondeo $2,000">Preparación para fondeo $2,000</option>
+            <option value="Mentoría 1:1 anual (sin precio)">Mentoría 1:1 anual (sin precio)</option>
+            <option value="Membresía de por vida $2,000">Membresía de por vida $2,000</option>
+          <option value="Newsletter mensual $15/mes">Newsletter mensual ($15/mes)</option>
           </select>
         </div>
         <div class="fgroup">
